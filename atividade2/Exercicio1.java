@@ -3,7 +3,7 @@ package poo;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class TestaNumero {
+public class Exercicio1 {
     public static void main(String[] args) {
 
         Numero n = new Numero();
