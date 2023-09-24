@@ -1,11 +1,10 @@
 public class Conta {
-    // O saldo será declarado como privado, abaixo do código sera feito um metedo para deixalo "publico"
     int numero;
     private float saldo;
     float limite;
     Cliente cliente;
 
-    public Conta(int numero, float saldo, float limite, Cliente cliete) {
+    public Conta(int numero, float saldo, float limite, Cliente cliente) {
         this.numero = numero;
         this.saldo = saldo;
         this.limite = limite;
@@ -13,23 +12,20 @@ public class Conta {
     }
 
     void sacar(float valor) {
-        if(valor <= this.saldo){
+        if (valor <= this.saldo) {
             this.saldo = this.saldo - valor;
-        }else {
+        } else {
             System.out.println("===================");
             System.out.println("Saldo Insuficiente");
             System.out.println("===================");
         }
     }
 
-    void depositar(float valor) {
-        this.saldo = this.saldo + valor;
+    public void realizarDeposito(Deposito deposito) {
+        this.saldo += deposito.getValor();
     }
 
-    // Método getter do  atributo saldo, para torna-lo "publico" para ser acessado pelo usuario da conta
-    public float getSaldo(){
+    public float getSaldo() {
         return this.saldo + this.limite;
     }
-
-
 }
