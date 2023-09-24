@@ -12,6 +12,7 @@ public class Conta {
     }
 
     void sacar(float valor) {
+        // Verifica se o valor do saque não excede o saldo disponível
         if (valor <= this.saldo) {
             this.saldo = this.saldo - valor;
         } else {
@@ -22,10 +23,12 @@ public class Conta {
     }
 
     public void realizarDeposito(Deposito deposito) {
+        // Realiza um depósito na conta
         this.saldo += deposito.getValor();
     }
 
     public float getSaldo() {
+        // Retorna o saldo disponível na conta, incluindo o limite de crédito
         return this.saldo + this.limite;
     }
 }
